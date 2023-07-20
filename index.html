@@ -1,57 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Rock & Paper & Scissors</title>
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <div class="container">
-            <div id="showWinner"></div>
-            <canvas id="canvas" width="900" height="600"></canvas>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock & Paper & Scissors</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <h2>Rules</h2>
+        <br />
+        <p>Welcome to the <strong>Rock-Paper-Scissors Simulation!</strong></p>
+        <br />
+        <p>
+          In this simulation, entities can move around the canvas. When they
+          collide, they interact following the rules of the
+          <strong>Rock-Paper-Scissors game:</strong>
+        </p>
+        <br />
+        <ul>
+          <li><strong>Rock loses to Paper</strong></li>
+          <li><strong>Paper loses to Scissors</strong></li>
+          <li><strong>Scissors lose to Rock</strong></li>
+        </ul>
+        <p>
+          Feel free to experiment with different number of entities, but keep in
+          mind that for a <strong>balanced and fair simulation,</strong> using
+          equal values for all entities is ideal.
+        </p>
+        <br />
+        <p>Have fun and see which entity type emerges as the winner!</p>
+        <br />
+        <div class="btnControl">
+          <button id="closeBtn">Got it!</button>
         </div>
-        <div>
-            <div class="wrapper">
-                <h2>Rules</h1>
-                <ul>
-                    <li>
-                        <img width="20" src="rock.png" />
-                        &nbsp; wins against &nbsp;
-                        <img width="20" src="scissors.png" />
-                    </li>
-                    <li>
-                        <img width="20" src="paper.png" />
-                        &nbsp; wins against &nbsp;
-                        <img width="20" src="rock.png" />
-                    </li>
-                    <li>
-                        <img width="20" src="scissors.png" />
-                        &nbsp; wins against &nbsp;
-                        <img width="20" src="paper.png" />
-                    </li>
-                </ul>
-            </div>
-            <br />
-            <div class="wrapper">
-                <h2>Entities</h1>
-                <div>
-                    <label>Rock</label>
-                    <input type="number" value="10" id="numRock" />
-                </div>
-                <div>
-                    <label>Paper</label>
-                    <input type="number" value="10" id="numPaper" />
-                </div>
-                <div>
-                    <label>Scissors</label>
-                    <input type="number" value="10" id="numScissors" />
-                </div>
-                <button type="button" onclick="startSimulation()">Run</button>
-            </div>
+      </div>
+    </div>
+
+    <div class="container" id="container">
+      <div id="showWinner">
+        <div class="overlay-content">
+          <h2>Winner: <span id="winnerName"></span></h2>
         </div>
-        <script src="entity.js"></script>
-        <script src="script.js"></script>
-    </body>
+      </div>
+      <canvas id="canvas"></canvas>
+    </div>
+
+    <footer>
+      <button class="outline" id="modalTrigger">See rules</button>
+      <hr />
+      <div class="formControl">
+        <div class="inputControl">
+          <p>Rock</p>
+          <input value="20" min="0" max="100" type="number" id="numRock" />
+        </div>
+        <div class="inputControl">
+          <p>Paper</p>
+          <input value="20" min="0" max="100" type="number" id="numPaper" />
+        </div>
+        <div class="inputControl">
+          <p>Scissors</p>
+          <input value="20" min="0" max="100" type="number" id="numScissors" />
+        </div>
+        <button type="button" id="runBtn" onclick="startSimulation()">
+          Run Simulation
+        </button>
+      </div>
+    </footer>
+    <script src="entity.js"></script>
+    <script src="script.js"></script>
+    <script src="modal.js"></script>
+  </body>
 </html>
