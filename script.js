@@ -24,7 +24,6 @@ function showWinnerOverlay(winnerName) {
   showWinnerOverlay.style.display = "block";
 }
 
-// Function to close the winner overlay
 function closeWinnerOverlay() {
   const showWinnerOverlay = document.getElementById("showWinner");
   showWinnerOverlay.style.display = "none";

@@ -40,7 +40,6 @@ class Entity {
 
     checkCollision(entities) {
         for (let i = 0; i < entities.length; i++) {
-            //percorre todas as entities, menos ela mesma e checa colisão
             const targetEntity = entities[i];
             if (targetEntity !== this) {
                 const dx = this.x - targetEntity.x;
